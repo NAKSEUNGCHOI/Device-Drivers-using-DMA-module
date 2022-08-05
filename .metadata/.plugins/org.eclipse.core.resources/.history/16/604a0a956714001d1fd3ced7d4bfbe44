@@ -1,0 +1,16 @@
+/*
+ * uart.c
+ *
+ *  Created on: Aug 4, 2022
+ *      Author: chlsk
+ */
+#include "uart.h"
+
+void uart_init(void){
+	/*1. Set clock access to USART2 */
+	RCC->APB1ENR |= RCC_APB1ENR_USART2EN;
+
+	/*2. Set GPIOB mode to alternate function */
+
+}
+

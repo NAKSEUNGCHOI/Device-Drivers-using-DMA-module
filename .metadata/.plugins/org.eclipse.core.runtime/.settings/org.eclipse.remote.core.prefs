@@ -1,0 +1,11 @@
+connections/org.eclipse.remote.serial.core.connectionType/STM32_UART/serial.baudRate=11
+connections/org.eclipse.remote.serial.core.connectionType/STM32_UART/serial.byteSize=3
+connections/org.eclipse.remote.serial.core.connectionType/STM32_UART/serial.parity=0
+connections/org.eclipse.remote.serial.core.connectionType/STM32_UART/serial.portName=COM5
+connections/org.eclipse.remote.serial.core.connectionType/STM32_UART/serial.stopBits=0
+connections/org.eclipse.remote.serial.core.connectionType/UART_printf_COM5/serial.baudRate=11
+connections/org.eclipse.remote.serial.core.connectionType/UART_printf_COM5/serial.byteSize=3
+connections/org.eclipse.remote.serial.core.connectionType/UART_printf_COM5/serial.parity=0
+connections/org.eclipse.remote.serial.core.connectionType/UART_printf_COM5/serial.portName=COM5
+connections/org.eclipse.remote.serial.core.connectionType/UART_printf_COM5/serial.stopBits=0
+eclipse.preferences.version=1

@@ -1,0 +1,25 @@
+/**
+ *	main.c
+ *	@brief running MPU6050 i2c bare-metal
+ *  @author Nakseung Choi
+ *  @date 07-28-2022
+ */
+#include <stdio.h>
+#include <stdint.h>
+#include <string.h>
+#include "stm32f4xx.h"
+#include "uart.h"
+
+int main(void){
+
+	uart2_tx_init();
+
+	while(1){
+		printf("Hello from Choi\n\r");
+	}
+
+
+}
+
+
+

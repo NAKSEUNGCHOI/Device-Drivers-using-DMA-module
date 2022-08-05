@@ -1,0 +1,4 @@
+../Core/Src/MPU6050.c:21:6:MPU6050_read_address	16	static
+../Core/Src/MPU6050.c:30:6:MPU6050_write	24	static
+../Core/Src/MPU6050.c:41:6:MPU6050_read_values	16	static
+../Core/Src/MPU6050.c:57:6:MPU6050_init	8	static

@@ -1,0 +1,39 @@
+/*
+ * uart.c
+ *
+ *  Created on: Aug 4, 2022
+ *      Author: chlsk
+ */
+#include "uart.h"
+
+static uint16_t compute_uart_baudrate(uint32_t periph_clk, uint32_t baudrate);
+static void uart_set_baudarate(uint32_t periph_clk, uint32_t baudrate);
+
+void uart_init(void){
+
+	/*1. Set clock access to GPIOA*/
+	RCC->AHB1ENR |= RCC_AHB1ENR_GPIOAEN;
+
+	/*2. Set GPIOA mode to alternate function */
+	GPIOA->MODER |= GPIO_MODER_MODE1_1 | GPIO_MODER_MODE2_1;
+
+	/*3. Set PA2 alternate function type to AF7 (UART2_TX) */
+	GPIOA->AFR[0] |= GPIO_AFRL_AFRL7_0 | GPIO_AFRL_AFRL7_1 | GPIO_AFRL_AFRL7_3;
+
+	/*4. Enable clock access to UART2 */
+	RCC->APB1ENR |= RCC_APB1ENR_USART2EN;
+
+	/*5. Set baudrate */
+
+
+	/*6. Set transfer direction */
+
+	/*7. Enable UART Module */
+
+}
+static uint16_t compute_uart_baudrate(uint32_t periph_clk, uint32_t baudrate){
+	return ((periph_clk + (buadrate / 2U)) / baudrate);
+}
+static void uart_set_baudarate(uint32_t periph_clk, uint32_t baudrate){
+	USART2->BRR = compute_uart_buadrate(periph_clk, baudrate);
+}

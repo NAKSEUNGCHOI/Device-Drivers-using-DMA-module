@@ -1,0 +1,10 @@
+18:28:50 **** Incremental Build of configuration Debug for project 3_WorkingWithITM-printf ****
+make -j16 all 
+arm-none-eabi-size   3_WorkingWithITM-printf.elf 
+   text	   data	    bss	    dec	    hex	filename
+   3972	    112	   1592	   5676	   162c	3_WorkingWithITM-printf.elf
+Finished building: default.size.stdout
+ 
+
+18:28:50 Build Finished. 0 errors, 0 warnings. (took 277ms)
+

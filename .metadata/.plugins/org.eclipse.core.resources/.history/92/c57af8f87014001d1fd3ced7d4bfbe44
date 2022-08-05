@@ -1,0 +1,5 @@
+../Core/Src/uart.c:16:5:__io_putchar	16	static
+../Core/Src/uart.c:22:6:uart2_tx_init	8	static
+../Core/Src/uart.c:46:13:uart2_write	16	static
+../Core/Src/uart.c:55:17:compute_uart_baudrate	16	static
+../Core/Src/uart.c:58:13:uart_set_baudarate	16	static

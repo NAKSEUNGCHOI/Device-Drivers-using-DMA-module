@@ -1,0 +1,24 @@
+/**
+ *	main.c
+ *	@brief running MPU6050 i2c bare-metal
+ *  @author Nakseung Choi
+ *  @date 07-28-2022
+ */
+#include <stdio.h>
+#include <stdint.h>
+#include "stm32f4xx.h"
+
+char _a[1] = {'A'};
+char *pt_a = _a;
+
+int main(void){
+
+	while(1){
+		ITM_SendChar(*pt_a);
+	}
+
+
+}
+
+
+

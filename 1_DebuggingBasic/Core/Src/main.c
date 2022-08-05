@@ -1,0 +1,27 @@
+/**
+ *	main.c
+ *	@brief running MPU6050 i2c bare-metal
+ *  @author Nakseung Choi
+ *  @date 07-28-2022
+ */
+#include <stdio.h>
+#include <stdint.h>
+#include "stm32f4xx.h"
+
+
+
+int main(void){
+	int total;
+	for(int i = 0; i < 10; i++){
+		total += i;
+	}
+
+	while(1){
+
+	}
+
+
+}
+
+
+

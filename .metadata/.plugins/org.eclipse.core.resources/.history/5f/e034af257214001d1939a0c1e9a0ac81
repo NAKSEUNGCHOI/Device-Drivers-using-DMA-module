@@ -1,0 +1,62 @@
+/*
+ * uart.c
+ *
+ *  Created on: Aug 4, 2022
+ *      Author: chlsk
+ */
+#include "uart.h"
+
+#define UART_BAUDRATE 		115200
+#define CLK					16000000
+
+static uint16_t compute_uart_baudrate(uint32_t periph_clk, uint32_t baudrate);
+static void uart_set_baudarate(uint32_t periph_clk, uint32_t baudrate);
+static void uart2_write(int ch);
+
+int __io_putchar(int ch){
+
+	uart2_write(ch);
+	return ch;
+
+}
+void uart2_tx_init(void){
+
+	/*1. Set clock access to GPIOA*/
+	RCC->AHB1ENR |= RCC_AHB1ENR_GPIOAEN;
+
+	/*2. Set PA2 mode to alternate function */
+	GPIOA->MODER |= GPIO_MODER_MODE2_1;
+	GPIOA->MODER &= ~GPIO_MODER_MODE2_0;
+
+	/*3. Set PA2 alternate function type to AF7 (UART2_TX) */
+	GPIOA->AFR[0] |= GPIO_AFRL_AFRL7_0 | GPIO_AFRL_AFRL7_1 | GPIO_AFRL_AFRL7_2;
+	GPIOA->AFR[0] &= ~GPIO_AFRL_AFRL7_3;
+
+	/*4. Enable clock access to UART2 */
+	RCC->APB1ENR |= RCC_APB1ENR_USART2EN;
+
+	/*5. Set baudrate */
+	uart_set_baudarate(CLK, UART_BAUDRATE);
+
+	/*6. Set transfer direction */
+	USART2->CR1 = USART_CR1_TE;
+
+	/*7. Enable UART Module */
+	USART2->CR1 |= USART_CR1_UE;
+
+}
+static void uart2_write(int ch){
+
+	/*1. Make sure the transmit data register is empty*/
+	while(!(USART2->SR & USART_SR_TXE)){}
+
+	/*2. Once we know its empty, write to transmit data register. */
+	USART2->DR = (ch & 0xFF);
+}
+
+static uint16_t compute_uart_baudrate(uint32_t periph_clk, uint32_t baudrate){
+	return ((periph_clk + (baudrate / 2U)) / baudrate);
+}
+static void uart_set_baudarate(uint32_t periph_clk, uint32_t baudrate){
+	USART2->BRR = compute_uart_baudrate(periph_clk, baudrate);
+}

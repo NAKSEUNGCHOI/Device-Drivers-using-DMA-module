@@ -1,0 +1,10 @@
+22:00:58 **** Incremental Build of configuration Debug for project 6_DebuggingWithGPIO ****
+make -j16 all 
+arm-none-eabi-size   6_DebuggingWithGPIO.elf 
+   text	   data	    bss	    dec	    hex	filename
+    920	     12	   1572	   2504	    9c8	6_DebuggingWithGPIO.elf
+Finished building: default.size.stdout
+ 
+
+22:00:59 Build Finished. 0 errors, 0 warnings. (took 356ms)
+
