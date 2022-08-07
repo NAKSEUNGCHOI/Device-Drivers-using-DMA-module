@@ -1,0 +1,3 @@
+../Drivers/CMSIS/Include/core_cm4.h:1688:22:__NVIC_EnableIRQ	16	static
+../Core/Src/dma.c:10:6:DMA2_mem2mem_init	8	static
+../Core/Src/dma.c:55:6:DMA2_transfer_start	24	static
