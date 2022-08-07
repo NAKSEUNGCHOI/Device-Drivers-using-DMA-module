@@ -17,6 +17,7 @@
 
 ## Release Note
 
+- <pre> ADC DMA drivers triggered by timer2 complete                                            Aug-06-2022</pre>
 - <pre> Bare-metal ADC DMA drivers complete                                                     Aug-06-2022</pre>
 - <pre> Developing bare-metal ADC DMA drivers                                                   Aug-04-2022</pre>
 - <pre> Learned various ways to debug codes (ITM, on-board button, USART, SWV)                  Aug-02-2022</pre>
