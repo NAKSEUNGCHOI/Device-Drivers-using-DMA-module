@@ -17,6 +17,7 @@
 
 ## Release Note
 
+- <pre> Working on SPI DMA driver                                                               08-12-2022</pre>
 - <pre> UART DMA complete                                                                       08-11-2022</pre>
 - <pre> ADC DMA triggered by timer2 complete                                                    08-06-2022</pre>
 - <pre> Bare-metal ADC DMA drivers complete                                                     08-06-2022</pre>
